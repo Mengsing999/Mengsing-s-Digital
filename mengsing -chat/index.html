@@ -1,0 +1,57 @@
+import os
+
+# Create a basic HTML file with the MengSing chat UI and fetch logic
+html_content = """
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>MengSing AI Chat</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; background: #f8f8f8; }
+    textarea { width: 100%; height: 100px; margin-bottom: 10px; }
+    button { padding: 10px 20px; }
+    pre { background: #eee; padding: 10px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>พูดคุยกับ MengSing</h1>
+  <textarea id="userInput" placeholder="วันดีที่รู้จัาก.."></textarea>
+  <button onclick="sendToMengSing()">ส่ง</button>
+  <pre id="responseOutput"></pre>
+
+  <script>
+    async function sendToMengSing() {
+      const userInput = document.getElementById("userInput").value;
+      const output = document.getElementById("responseOutput");
+      output.textContent = "กำลังตอบกลับ...";
+      
+      const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer YOUR_API_KEY"
+        },
+        body: JSON.stringify({
+          model: "gpt-3.5-turbo",
+          messages: [{ role: "user", content: userInput }]
+        })
+      });
+      
+      const data = await response.json();
+      output.textContent = data.choices[0].message.content;
+    }
+  </script>
+</body>
+</html>
+"""
+
+# Save the file to be uploaded to GitHub
+project_dir = "/mnt/data/mengsing-chat"
+os.makedirs(project_dir, exist_ok=True)
+
+file_path = os.path.join(project_dir, "index.html")
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+file_path1
