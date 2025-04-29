@@ -34,4 +34,4 @@ MengSing's Digit คือเว็บไซต์ที่สร้างขึ
 
 1. Clone โปรเจกต์นี้
    ```bash
-   git clone https://github.com/meng/mengsing's Digital.git
+   git clone https://github.com/mengsing's Digital.git
