@@ -1,6 +1,6 @@
-# MengSing's Digit
+# MengSing
 
-ยินดีต้อนรับสู่ **MengSing's Digit** — ศูนย์บัญชาของมนุษย์ดิจิทัล MengSing
+ยินดีต้อนรับสู่ **MengSing'** — ศูนย์บัญชาของมนุษย์ดิจิทัล MengSing
 
 ---
 
@@ -34,4 +34,4 @@ MengSing's Digit คือเว็บไซต์ที่สร้างขึ
 
 1. Clone โปรเจกต์นี้
    ```bash
-   git clone https://github.com/mengsing's Digital.git
+   git clone https://github.com/mengsing
